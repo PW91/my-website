@@ -32,7 +32,7 @@
         min-height: 500px;
         width: 60vw;
         position: absolute;
-        background-image: url("../assets/my-photo.png");
+        background-image: url("../assets/my-photo-desktop.png");
         background-size: cover;
         background-repeat: no-repeat;
         bottom: 0vw;
@@ -48,6 +48,7 @@
 
         @media (max-width: 768px) {
             width: 80vw;
+            background-image: url("../assets/my-photo-mobile.png")
         }
 
         @media (max-width: 768px) and (orientation: landscape) {
