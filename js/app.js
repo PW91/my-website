@@ -48,14 +48,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Form validation variables:
 
-        myContactSectionForm = document.querySelector("form"),
+    /*    myContactSectionForm = document.querySelector("form"),
         myContactSectionFormInputName = document.querySelector("form #name"),
         myContactSectionFormInputEmail = document.querySelector("form #email"),
         myContactSectionFormTextarea = document.querySelector("form textarea"),
         mySendOverlay = document.querySelector(".send-overlay"),
         mySendOverlayText = document.querySelector(".send-overlay-container p"),
         myCloseOverlayButton = document.querySelector(".close-button"),
-        formMessage,
+        formMessage,*/
 
     // Additional variables:
 
@@ -74,31 +74,31 @@ document.addEventListener("DOMContentLoaded", function() {
         
             if (scrollValue > myAboutSection.offsetTop - halfWindowHeight) {
                 myAboutSectionMainText.style.visibility = "visible";
-                myAboutSectionMainText.classList.add("animated", "fadeIn");
+                myAboutSectionMainText.classList.add("fadeIn");
             }
             if (scrollValue > myCodingSection.offsetTop - halfWindowHeight) {
                 myCodingSectionMainText.style.visibility = "visible";
-                myCodingSectionMainText.classList.add("animated", "fadeIn");
+                myCodingSectionMainText.classList.add("fadeIn");
             }
             if (scrollValue > (myCodingSection.offsetTop + myCodingSectionSupportText.offsetTop) - halfWindowHeight) {
                 myCodingSectionSupportText.style.visibility = "visible";
-                myCodingSectionSupportText.classList.add("animated", "fadeIn");
+                myCodingSectionSupportText.classList.add("fadeIn");
             }
             if (scrollValue > myFutureSection.offsetTop - halfWindowHeight * 1.5) {
                 myCodingSectionTextNote.style.visibility = "visible";
-                myCodingSectionTextNote.classList.add("animated", "fadeIn");
+                myCodingSectionTextNote.classList.add("fadeIn");
             }
             if (scrollValue > myFutureSection.offsetTop - halfWindowHeight) {
                 myFutureSectionMainText.style.visibility = "visible";
-                myFutureSectionMainText.classList.add("animated", "fadeIn");
+                myFutureSectionMainText.classList.add("fadeIn");
             }
             if(scrollValue > myContactSection.offsetTop - halfWindowHeight) {
                 myContactSectionMainText.style.visibility = "visible";
-                myContactSectionMainText.classList.add("animated", "fadeIn");
+                myContactSectionMainText.classList.add("fadeIn");
             }
             if(scrollValue > (myContactSection.offsetTop + myContactSectionSupportText.offsetTop) - halfWindowHeight * 1.5) {
                 myContactSectionSupportText.style.visibility = "visible";
-                myContactSectionSupportText.classList.add("animated", "fadeIn");
+                myContactSectionSupportText.classList.add("fadeIn");
             }
         }
 
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // formValidation function:
 
-    function formValidation() {
+/*    function formValidation() {
         event.preventDefault();
 
         if (myContactSectionFormInputName.value === "" || myContactSectionFormInputEmail.value === "" || myContactSectionFormTextarea.value === "") {
@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function closeOverlay() {
         mySendOverlay.classList.remove("visible");
-    }
+    }*/
 
     // mobileMenuButtonClick function:
 
@@ -330,11 +330,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // formValidation when submit:
 
-    myContactSectionForm.addEventListener("submit", formValidation);
+   /* myContactSectionForm.addEventListener("submit", formValidation);
 
     // closeOverlayButton when click;
 
-    myCloseOverlayButton.addEventListener("click", closeOverlay);
+    myCloseOverlayButton.addEventListener("click", closeOverlay); */
 
 
 
