@@ -1,6 +1,9 @@
 "use strict";
 
 $(document).ready(function() {
+
+//-----VARIABLES: 
+
     var myContactSectionForm = $("form"),
         myContactSectionFormInputName = $("form #name"),
         myContactSectionFormInputEmail = $("form #email"),
@@ -8,16 +11,13 @@ $(document).ready(function() {
         mySendOverlay = $(".send-overlay"),
         mySendOverlayText = $(".send-overlay-container p"),
         myCloseOverlayButton = $(".close-button"),
-        formContent;
-        //formName,
-        //formEmail,
-        //formMessage;
+        formMessage;
 
-    myContactSectionForm.on("submit", formValidation);
 
-    myCloseOverlayButton.on("click", function() {
-        mySendOverlay.removeClass("visible");
-    })
+
+//-----FUNCTION DEFINITIONS:
+
+    // formValidation function:
 
     function formValidation(event) {
         event.preventDefault();
@@ -25,18 +25,12 @@ $(document).ready(function() {
         if (myContactSectionFormInputName.val() === "" || myContactSectionFormInputEmail.val() === "" || myContactSectionFormTextarea.val() === "") {
             formFillCheck("Fill in all the fields, please!");
         } else {
-            //formMessage = myContactSectionForm.serialize();
-
-            formContent = {
-                formName: myContactSectionFormInputName.val(),
-                formEmail: myContactSectionFormInputEmail.val(),
-                formMessage: myContactSectionFormTextarea.val()
-            }
+            formMessage = myContactSectionForm.serialize();
 
             $.ajax({
                 url: "//formspree.io/wieteska.przemyslaw@gmail.com", 
                 method: "POST",
-                data: JSON.stringify(formContent)/*{message: formContent}*/,
+                data: {message: formContent},
                 dataType: "json"
                 }).done(function(response) {
                     formReset("Thank you!");
@@ -46,10 +40,14 @@ $(document).ready(function() {
         }
     }
 
+    // formFillCheck function:
+
     function formFillCheck(message) {
         mySendOverlay.addClass("visible");
         mySendOverlayText.text(message);       
     }
+
+    // formReset function:
 
     function formReset(message) {
         mySendOverlay.addClass("visible");
@@ -61,4 +59,22 @@ $(document).ready(function() {
         myContactSectionFormInputEmail.attr("placeholder", "Your email address");
         myContactSectionFormTextarea.attr("placeholder", "Your message");
     }
+
+    // closeOverlay function:
+
+    function closeOverlay() {
+        mySendOverlay.removeClass("visible");
+    }
+
+
+
+//-----EVENT LISTENERS:
+
+    // formValidation when submit:
+
+    myContactSectionForm.on("submit", formValidation);
+
+    // closeOverlay when click:
+
+    myCloseOverlayButton.on("click", closeOverlay);
 })

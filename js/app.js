@@ -46,17 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
         myContactSectionMainText = document.querySelector(".contact-section-main-text"),
         myContactSectionSupportText = document.querySelector(".contact-section-support-text"),
 
-    // Form validation variables:
-
-    /*    myContactSectionForm = document.querySelector("form"),
-        myContactSectionFormInputName = document.querySelector("form #name"),
-        myContactSectionFormInputEmail = document.querySelector("form #email"),
-        myContactSectionFormTextarea = document.querySelector("form textarea"),
-        mySendOverlay = document.querySelector(".send-overlay"),
-        mySendOverlayText = document.querySelector(".send-overlay-container p"),
-        myCloseOverlayButton = document.querySelector(".close-button"),
-        formMessage,*/
-
     // Additional variables:
 
         lastScrollValue = 0,
@@ -185,62 +174,6 @@ document.addEventListener("DOMContentLoaded", function() {
         myCodingSectionProjects[initialTada].classList.add("animated", "tada");
     }
 
-    // formValidation function:
-
-/*    function formValidation() {
-        event.preventDefault();
-
-        if (myContactSectionFormInputName.value === "" || myContactSectionFormInputEmail.value === "" || myContactSectionFormTextarea.value === "") {
-            formFillCheck("Fill in all the fields, please!");       
-        } else {
-            formMessage = String("NAME: " + myContactSectionFormInputName.value + " EMAIL ADDRESS: " + myContactSectionFormInputEmail.value + " MESSAGE: " + myContactSectionFormTextarea.value);
-
-            var request = new XMLHttpRequest(); 
-            request.open("POST", "http://formspree.io/wieteska.przemyslaw@gmail.com", true);
-            //request.setRequestHeader('Accept', 'application/json; charset=utf-8');
-            //request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            //request.setRequestHeader('Access-Control-Allow-Origin', '*');
-            //request.setRequestHeader('Access-Control-Allow-Methods:','DELETE, HEAD, GET, OPTIONS, POST, PUT');
-            //request.setRequestHeader('Access-Control-Allow-Headers: Content-Type, Content-Range, Content-Disposition, Content-Description');
-            //request.setRequestHeader('Access-Control-Max-Age','1728000');
-
-            request.onload = function() {
-                if (request.readyState != 4 || request.status != 200) {
-                    formReset("Oops, something went wrong! Try again, please!")
-                } else {
-                    formReset("Thank you!");
-                } 
-            }
-            request.send(formMessage);
-        }
-    }
-
-    // formFillCheck function:
-
-    function formFillCheck(message) {
-        mySendOverlay.classList.add("visible");
-        mySendOverlayText.innerHTML = message;
-    }
-
-    // formReset function:
-
-    function formReset(message) {
-        mySendOverlay.classList.add("visible");
-        mySendOverlayText.innerHTML = message;
-        myContactSectionFormInputName.value = "";
-        myContactSectionFormInputEmail.value = "";
-        myContactSectionFormTextarea.value = "";
-        myContactSectionFormInputName.setAttribute("placeholder", "Your name");
-        myContactSectionFormInputEmail.setAttribute("placeholder", "Your email address");
-        myContactSectionFormTextarea.setAttribute("placeholder", "Your message");
-    }
-
-    // closeOverlay function:
-
-    function closeOverlay() {
-        mySendOverlay.classList.remove("visible");
-    }*/
-
     // mobileMenuButtonClick function:
 
     function mobileMenuButtonClick() {
@@ -318,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener("scroll", textShowUp);
 
-    // MobileMenuButton when click:
+    // MobileMenu when click:
     
     myMobileMenuButton.addEventListener("click", mobileMenuButtonClick);
 
@@ -327,14 +260,6 @@ document.addEventListener("DOMContentLoaded", function() {
     for (var i = 0; i < myMobileMenuLinks.length; i++) {
         myMobileMenuLinks[i].addEventListener("click", mobileMenuLinkClick);
     }  
-
-    // formValidation when submit:
-
-   /* myContactSectionForm.addEventListener("submit", formValidation);
-
-    // closeOverlayButton when click;
-
-    myCloseOverlayButton.addEventListener("click", closeOverlay); */
 
 
 
