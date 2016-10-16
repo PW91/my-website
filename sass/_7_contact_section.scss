@@ -1,0 +1,287 @@
+.contact-section {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("../assets/background-triangles.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    @media (max-width: 768px) {
+        background-attachment: scroll;
+        background-size: contain;
+        background-repeat: repeat;
+    }
+
+    .send-overlay {
+        position: fixed;
+        background-color: rgba(0,0,0, 0.8);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 9999;
+        text-align: center;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        display: flex;
+        transition: all 300ms ease-in-out;
+
+        &.visible {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .send-overlay-container {
+
+            p {
+                font-size: 5vw;
+                padding: 0 200px;
+                margin: 0;
+
+                @media (max-width: 1200px) {
+                    font-size: 6vw;
+                    padding: 0 150px;
+                }
+
+                @media (max-width: 992px) {
+                    font-size: 7vw;
+                    padding: 0 100px;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 8vw;
+                    padding: 0 50px;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 10vw;
+                    padding: 0 20px;
+                }
+            }
+
+            .close-button {
+                font-size: 2.5vw;
+                color: white;
+                background-color: transparent;
+                border: 1px solid white;
+                padding: 15px 70px;
+                margin-top: 30px;
+                transition: background-color 300ms ease-in-out;
+
+                @media (max-width: 768px) {
+                    font-size: 4vw;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 5vw;
+                }
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    label {
+        font-weight: 500;
+        display: inline-block;
+        padding: 10px 0 0 10px;
+        width: 100%;
+        background-color: white;
+        font-size: 1.3vw;
+
+        @media (max-width: 1200px) {
+            font-size: 1.5vw;
+            padding-bottom: 1px;
+        }
+
+        @media (max-width: 992px) {
+            font-size: 1.8vw;
+        }
+
+        @media (max-width: 768px) {
+            padding-bottom: 5px;
+            font-size: 2.3vw;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 3.5vw;
+        }
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        padding: 10px 0 10px 10px;
+        font-size: 2vw;
+        border: 1px solid transparent;
+        background-color: white;
+
+        @media (max-width: 768px) {
+            font-size: 18px;
+        }
+    }
+
+    textarea {
+        display: block;
+        width: 100%;
+        border: 1px solid transparent;
+        resize: none;
+        padding: 10px 10px;
+        font-size: 2vw;
+        background-color: white;
+
+        @media (max-width: 768px) {
+            font-size: 18px;
+        }
+    }
+
+    input[type="submit"] {
+        background-color: $mainColor;
+        border: 1px solid transparent;
+        margin: 25px 30% 0 30%;
+        width: 40%;
+        padding: 15px 0;
+        font-size: 2.5vw;
+        font-weight: 500;
+        box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+        color: white;
+        transition: background-color 300ms ease-in-out;
+
+        @media (max-width: 1200px) {
+            padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            width: 50%;
+            margin-left: 25%;
+            margin-right: 25%;
+            font-size: 4vw;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 5vw;
+        }
+
+        &:hover {
+            background-color: #3cc17b;
+            transition: background-color 300ms ease-in-out;            
+        }
+    }
+
+    a {
+        color: #CDCDCD;
+
+        i {
+            font-size: 7vw;         
+        }
+    }
+}
+
+.contact-section-main-text {
+    font-size: 3vw;
+    text-align: center;
+    margin: 50px 0;
+    visibility: hidden;
+
+    @media (max-width: 768px) {
+        font-size: 5vw;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 7vw;
+    }
+}
+
+.contact-section-form-wrapper {
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-input-placeholder {
+   color: #dddddd;
+}
+
+.contact-section-social-icons-top-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+
+    @media (max-width: 768px) {
+        justify-content: space-around;
+    }
+
+    a i {
+        margin-left: 30px;
+        transition: color 300ms ease-in-out; 
+
+        @media (max-width: 768px) {
+            font-size: 11vw;
+            margin-left: 0;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 15vw;
+        }
+
+        &.icon-facebook:hover {
+            color: #3B5998;          
+        } 
+
+        &.icon-twitter:hover {
+            color: #00aced;         
+        }      
+    }
+}
+
+.contact-section-social-icons-bottom-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+
+    @media (max-width: 768px) {
+        justify-content: space-around;
+    }
+
+    a i {
+        margin-right: 30px;
+        transition: color 300ms ease-in-out;
+
+        @media (max-width: 768px) {
+            font-size: 11vw;
+            margin-right: 0;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 15vw;
+        }
+
+        &.icon-linkedin:hover {
+            color: #0077B5;
+        }
+
+        &.icon-github-circled:hover {
+            color: black;
+        }
+    }
+}
+
+.contact-section-support-text {
+    margin-top: 75px;
+    font-size: 2vw;
+    text-align: center;
+    visibility: hidden;
+
+    @media (max-width: 768px) {
+        font-size: 3.5vw;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 5vw;
+        margin-bottom: 30px;
+    }
+}

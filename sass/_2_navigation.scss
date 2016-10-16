@@ -1,0 +1,239 @@
+/*DESKTOP MENU*/
+
+.desktop-menu {
+    height: 100vh;
+    width: 15vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 9999;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: auto 0 auto 0;
+        padding: 0 30px 0 50px;
+        text-align: right;
+
+        @media (max-width: 992px) {
+            padding: 0;
+        }
+
+        li {
+            padding-bottom: 20px;
+
+            a {
+                color: black;
+                font-size: 24px;
+                text-decoration: none;
+
+                @media (max-width: 1200px) {
+                    font-size: 22px;
+                }
+
+                @media (max-width: 992px) {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        li:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+/*DESKTOP MENU ARROW*/
+
+#arrow {
+    height: 0px;
+    width: 0px;
+    position: fixed;
+    left: 12.5vw;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    background-color: transparent;
+    z-index: 9999;
+    border-color: transparent $mainColor transparent transparent;
+    transition: top 300ms ease-in-out;
+
+    @media (min-width: 1600px) {
+        left: 11.5vw;
+    }
+
+    @media (max-width: 1200px) {
+        left: 13vw;
+    }
+
+    @media (max-width: 992px) {
+        left: 12.1vw;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.arrow-hello-section {
+    top: calc(50vh - 117px);    
+
+    @media (max-width: 1200px) {
+        top: calc(50vh - 112px);  
+    }
+
+    @media (max-width: 992px) {
+        top: calc(50vh - 98px);  
+    }
+}
+
+.arrow-about-section {
+    top: calc(50vh - 63px);
+
+    @media (max-width: 1200px) {
+        top: calc(50vh - 60px);
+    }
+
+    @media (max-width: 992px) {
+        top: calc(50vh - 53px);
+    }
+}
+
+.arrow-coding-section {
+    top: calc(50vh - 9px);
+
+    @media (max-width: 1200px) {
+        top: calc(50vh - 9px);
+    }
+
+    @media (max-width: 992px) {
+        top: calc(50vh - 8px);
+    }
+}
+
+.arrow-future-section {
+    top: calc(50vh + 45px);
+
+    @media (max-width: 1200px) {
+        top: calc(50vh + 42px);
+    }
+
+    @media (max-width: 992px) {
+        top: calc(50vh + 37px);
+    }
+}
+
+.arrow-contact-section {
+    top: calc(50vh + 99px);
+
+    @media (max-width: 1200px) {
+        top: calc(50vh + 93px);
+    }
+
+    @media (max-width: 992px) {
+        top: calc(50vh + 82px);
+    }
+}
+
+/*MOBILE MENU*/
+
+.mobile-menu-button {
+    width: 50px;
+    height: 50px;
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-around;
+    right: 20px;
+    top: 20px;
+    z-index: 9999;
+
+    @media (max-width: 768px) {
+        display: flex;
+    }
+
+    .upper-line, .middle-line, .bottom-line {
+        height: 3px;
+        width: 100%;
+        background-color: black;
+        transition: all 300ms ease-in-out; 
+        position: relative;   
+    }
+
+    .upper-line {
+        top: 0;
+        transform: rotate(0deg);
+
+        &.clicked-button {
+            transform: rotate(-45deg);
+            top: 17px;  
+        }
+    }
+
+    .middle-line {
+        left: 0;
+
+        &.clicked-button {
+            background-color: transparent;
+            left: 100px;   
+        }
+    }
+
+    .bottom-line {
+        top: 0;
+        transform: rotate(0deg);
+
+        &.clicked-button {
+            top: -16px;
+            transform: rotate(45deg);    
+        }
+    }
+}
+
+.mobile-menu-list {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 200px;
+    left: -250px;
+    background-color: rgba(0,0,0, 0.8);
+    justify-content: center;
+    transition: all 800ms ease-in-out;
+    z-index: 9999;
+    box-shadow: 10px 0px 10px -7px rgba(0,0,0,0.75);
+    
+    @media (max-width: 768px) {
+       display: flex;
+    }
+
+    &.clicked-button-list {
+        left: 0;  
+        transition: all 300ms ease-in-out;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: auto 0 auto 0;
+        text-align: right;
+
+        li {
+            padding: 0 0 20px 0;
+            margin: 0;
+            visibility: hidden;
+
+            a {
+                color: white;
+                font-size: 24px;
+                text-decoration: none;           
+            }
+        }
+
+        li:last-child {
+            padding-bottom: 0;
+        }
+    }
+}

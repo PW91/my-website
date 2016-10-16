@@ -1,0 +1,295 @@
+.coding-section {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("../assets/background-triangles.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    @media (max-width: 768px) {
+        background-attachment: scroll;
+        background-size: contain;
+        background-repeat: repeat;
+    }
+}
+
+.coding-section-main-text {
+    font-size: 3vw;
+    text-align: center;
+    margin: 50px 0 30px 0;
+    padding: 0;
+    visibility: hidden;
+
+    @media (max-width: 768px) {
+        margin-bottom: 0;
+        font-size: 5vw;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 7vw;
+    }
+}
+
+.coding-section-skills {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.coding-section-skill-single {
+    text-align: center;
+    padding: 30px 0;
+    flex: 1;
+    flex-basis: 20%;
+
+    @media (max-width: 480px) {
+        flex-basis: 50%;
+    }
+
+    h4 {
+        margin: 20px 0 0 0;
+        padding: 0;
+        font-size: 1.5vw;
+
+        @media (max-width: 992px) {
+            font-size: 1.8vw;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 2.5vw;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 4.5vw;
+        }
+    }
+}
+
+.coding-section-skill-single-circle-shadow {
+    position: relative;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3); 
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (max-width: 768px) {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    @media (max-width: 480px) {
+        width: 25vw;
+        height: 25vw;
+    }
+}
+
+.progress-radial {
+    position: relative;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    display: block;
+    margin: 0;
+
+    @media (max-width: 768px) {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    @media (max-width: 480px) {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .overlay {
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        background-color: white;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        line-height: 7vw;
+
+        @media (max-width: 768px) {
+            width: 9vw;
+            height: 9vw;
+            line-height: 9vw;
+        }
+
+        @media (max-width: 480px) {
+            width: 16vw;
+            height: 16vw;
+            line-height: 16vw;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 1.8vw;
+            color: $mainColor;
+            font-weight: 700;
+
+            @media (max-width: 992px) {
+                font-size: 2vw;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 2.5vw;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 5vw;
+            }
+        }
+    }
+}
+
+.coding-section-support-text {
+    font-size: 3vw;
+    text-align: center;
+    margin: 50px 0 0 0;
+    padding: 0;
+    visibility: hidden;
+
+    @media (max-width: 768px) {
+        font-size: 5vw;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 7vw;
+    }
+}
+
+.col-sm-4 {
+    //border: 1px solid violet;
+}
+
+.coding-section-project {
+    background-color: white;
+    width: 20vw;
+    height: 20vw;
+    margin: 50px auto 100px auto;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 300ms ease-in-out;
+
+    @media (max-width: 768px) {
+        height: 30vw;
+        width: 30vw;
+        margin: 50px auto;
+    }
+
+    @media (max-width: 767px) {
+        height: 50vw;
+        width: 50vw;
+    }
+
+    @media (max-width: 480px) {
+        height: 50vw;
+        width: 50vw;
+    }
+
+    &:hover {
+        background-color: $mainColor;
+
+        & .coding-section-project-link-image {
+            background-size: 120%;
+        } 
+
+        & .coding-section-project-link {
+            text-decoration: none;
+        }
+
+        & .coding-section-project-link-image-textbar {
+            background-color: rgba(255,255,255, 0.6);
+        }
+    }
+}
+
+.coding-section-project-link {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.coding-section-project-link-image {
+    width: 90%;
+    height: 90%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-size 300ms ease-in-out;
+}
+
+.organizer .coding-section-project-link-image {
+    background-image: url("../assets/coding-1.jpg");
+}
+
+.furry-game .coding-section-project-link-image {
+    background-image: url("../assets/coding-2.jpg");
+}
+
+.calculator .coding-section-project-link-image {
+    background-image: url("../assets/coding-3.jpg");
+}
+
+.coding-section-project-link-image-textbar {
+    width: 100%;
+    background-color: rgba(255,255,255, 0.8);
+    text-align: center;
+    margin-top: 60%;
+    transition: background-color 300ms ease-in-out;
+
+    h3 {
+        margin: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 2.5vw;
+        color: black;
+        font-weight: 500;
+        text-decoration: none;
+
+        @media (max-width: 768px) {
+            font-size: 4.5vw;
+       }
+
+        @media (max-width: 480px) {
+            font-size: 6vw;
+        }
+    }
+}
+
+.coding-section-text-note {
+    margin: 0 0 10px 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1vw;
+    visibility: hidden;
+
+    @media (max-width: 1200px) {
+        font-size: 1.1vw;
+    }
+
+    @media (max-width: 992px) {
+        font-size: 1.3vw;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1.6vw;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 2vw;
+    }
+}

@@ -1,0 +1,130 @@
+.hello-section {
+    min-height: 600px;
+    height: 100vh;
+    width: 100%;
+    background-image: url("../assets/background-triangles.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        background-attachment: scroll;
+        background-size: contain;
+        background-repeat: repeat;
+    }
+
+    @media (max-width: 768px) and (orientation: landscape) {
+        min-height: 500px;
+    }
+
+    @media (max-width: 480px) and (orientation: landscape) {
+        min-height: 500px;
+    }
+}
+
+    .hello-section-photo {
+        height: 100%;
+        min-height: 500px;
+        width: 60vw;
+        position: absolute;
+        background-image: url("../assets/my-photo.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        bottom: 0vw;
+        right: 0vw;
+
+        @media (max-width: 1200px) {
+            width: 60vw;
+        }
+
+        @media (max-width: 992px) {
+            width: 60vw;
+        }
+
+        @media (max-width: 768px) {
+            width: 80vw;
+        }
+
+        @media (max-width: 768px) and (orientation: landscape) {
+            width: 70vw;
+        }
+
+        @media (max-width: 480px) {
+            width: 100vw;
+        }
+
+        @media (max-width: 480px) and (orientation: landscape) {
+            width: 80vw;
+        }
+    }
+
+.hello-section-main-text {
+    font-size: 4vw;
+    margin: 0;
+	padding: 0 0 0 10px;
+    font-weight: 300;
+
+    @media (max-width: 1200px) {
+        font-size: 5vw;
+    }
+
+    @media (max-width: 992px) {
+        font-size: 5.5vw;
+        padding-right: 100px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 7vw;
+        padding-left: 6px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 8vw;
+        padding-right: 0;
+        padding-left: 7px;
+    }
+
+    strong {
+        color: $mainColor;
+        font-weight: 500;
+    }
+
+    &.fadeIn {
+        animation-duration: 1000ms;
+        animation-delay: 1300ms;
+    }
+}
+
+.hello-section-support-text {
+    color: $mainColor;
+    font-size: 13vw;
+    padding: 0;
+    margin: 0;
+    font-weight: 300;
+
+    @media (max-width: 1200px) {
+        font-size: 17vw;
+    }
+
+    @media (max-width: 992px) {
+        font-size: 17.5vw;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 19vw;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 28vw;
+    }
+
+    &.fadeIn {
+        animation-duration: 1000ms;  
+        animation-delay: 300ms; 
+    }
+}
