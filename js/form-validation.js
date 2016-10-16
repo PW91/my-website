@@ -30,7 +30,7 @@ $(document).ready(function() {
             $.ajax({
                 url: "//formspree.io/wieteska.przemyslaw@gmail.com", 
                 method: "POST",
-                data: {message: formContent},
+                data: {message: formMessage},
                 dataType: "json"
                 }).done(function(response) {
                     formReset("Thank you!");
