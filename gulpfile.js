@@ -11,7 +11,7 @@ gulp.task("sass", function () {
 		.pipe(sass({
 			outputStyle: "compressed"
 		}))
-		/*.pipe(sourcemaps.write())*/
+		.pipe(sourcemaps.write())
 		.pipe(autoprefixer({
 			browsers: ["> 1%", "last 2 versions", "Firefox ESR"]
 		}))
