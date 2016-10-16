@@ -23,7 +23,9 @@ $(document).ready(function() {
         event.preventDefault();
 
         if (myContactSectionFormInputName.val() === "" || myContactSectionFormInputEmail.val() === "" || myContactSectionFormTextarea.val() === "") {
-            formFillCheck("Fill in all the fields, please!");
+            formCheck("Please, fill in all the fields!");
+        } else if (!myContactSectionFormInputEmail.val().match(/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i)) {
+            formCheck("Please, provide valid email address!");
         } else {
             formMessage = myContactSectionForm.serialize();
 
@@ -33,25 +35,25 @@ $(document).ready(function() {
                 data: {message: formMessage},
                 dataType: "json"
                 }).done(function(response) {
-                    formReset("Thank you!");
+                    formCheck("Thank you!");
+                    formReset();
                 }).fail(function(error) {
-                    formReset("Oops, something went wrong! Please, try again!");
+                    formCheck("Oops, something went wrong! Please, try again!");
+                    formReset();
             })
         }
     }
 
-    // formFillCheck function:
+    // formCheck function:
 
-    function formFillCheck(message) {
+    function formCheck(message) {
         mySendOverlay.addClass("visible");
         mySendOverlayText.text(message);       
     }
 
     // formReset function:
 
-    function formReset(message) {
-        mySendOverlay.addClass("visible");
-        mySendOverlayText.text(message);
+    function formReset() {
         myContactSectionFormInputName.val("");
         myContactSectionFormInputEmail.val("");
         myContactSectionFormTextarea.val("");
