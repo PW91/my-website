@@ -8,7 +8,10 @@ $(document).ready(function() {
         mySendOverlay = $(".send-overlay"),
         mySendOverlayText = $(".send-overlay-container p"),
         myCloseOverlayButton = $(".close-button"),
-        formMessage;
+        formContent;
+        //formName,
+        //formEmail,
+        //formMessage;
 
     myContactSectionForm.on("submit", formValidation);
 
@@ -22,12 +25,18 @@ $(document).ready(function() {
         if (myContactSectionFormInputName.val() === "" || myContactSectionFormInputEmail.val() === "" || myContactSectionFormTextarea.val() === "") {
             formFillCheck("Fill in all the fields, please!");
         } else {
-            formMessage = myContactSectionForm.serialize();
+            //formMessage = myContactSectionForm.serialize();
+
+            formContent = {
+                formName: myContactSectionFormInputName.val(),
+                formEmail: myContactSectionFormInputEmail.val(),
+                formMessage: myContactSectionFormTextarea.val()
+            }
 
             $.ajax({
                 url: "//formspree.io/wieteska.przemyslaw@gmail.com", 
                 method: "POST",
-                data: {message: formMessage},
+                data: JSON.stringify(formContent)/*{message: formContent}*/,
                 dataType: "json"
                 }).done(function(response) {
                     formReset("Thank you!");
