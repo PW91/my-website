@@ -13,7 +13,7 @@ gulp.task("sass", function () {
 		}))
 		.pipe(sourcemaps.write())
 		.pipe(autoprefixer({
-			browsers: ["> 1%", "last 2 versions", "Firefox ESR"]
+			browsers: ["last 15 versions", "> 1%", "ie 8", "ie 7", "Firefox ESR"]
 		}))
 		.pipe(gulp.dest("css_compressed/"));
 })

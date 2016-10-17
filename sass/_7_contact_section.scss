@@ -215,26 +215,30 @@
         justify-content: space-around;
     }
 
-    a i {
-        margin-left: 30px;
-        transition: color 300ms ease-in-out; 
+    a {
+        text-decoration: none;
 
-        @media (max-width: 768px) {
-            font-size: 11vw;
-            margin-left: 0;
+        i {
+            margin-left: 30px;
+            transition: color 300ms ease-in-out; 
+
+            @media (max-width: 768px) {
+                font-size: 11vw;
+                margin-left: 0;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 15vw;
+            }
+
+            &.icon-facebook:hover {
+                color: #3B5998;          
+            } 
+
+            &.icon-twitter:hover {
+                color: #00aced;         
+            }      
         }
-
-        @media (max-width: 480px) {
-            font-size: 15vw;
-        }
-
-        &.icon-facebook:hover {
-            color: #3B5998;          
-        } 
-
-        &.icon-twitter:hover {
-            color: #00aced;         
-        }      
     }
 }
 
@@ -247,25 +251,29 @@
         justify-content: space-around;
     }
 
-    a i {
-        margin-right: 30px;
-        transition: color 300ms ease-in-out;
+    a {
+        text-decoration: none;
+    
+        i {
+            margin-right: 30px;
+            transition: color 300ms ease-in-out;
 
-        @media (max-width: 768px) {
-            font-size: 11vw;
-            margin-right: 0;
-        }
+            @media (max-width: 768px) {
+                font-size: 11vw;
+                margin-right: 0;
+            }
 
-        @media (max-width: 480px) {
-            font-size: 15vw;
-        }
+            @media (max-width: 480px) {
+                font-size: 15vw;
+            }
 
-        &.icon-linkedin:hover {
-            color: #0077B5;
-        }
+            &.icon-linkedin:hover {
+                color: #0077B5;
+            }
 
-        &.icon-github-circled:hover {
-            color: black;
+            &.icon-github-circled:hover {
+                color: black;
+            }
         }
     }
 }
