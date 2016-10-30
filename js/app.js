@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         myMobileMenu = document.querySelector(".mobile-menu-list"),
         myMobileMenuButtonSpans = document.querySelectorAll(".mobile-menu-button span"),
         myMobileMenuLinks = document.querySelectorAll("header nav .mobile-menu-list ul li a"),
+        myDesktopMenuLinks = document.querySelectorAll("header nav .desktop-menu li a"),
         myDesktopMenuArrow = document.querySelector("#arrow"),
 
     // Hello section variables:
@@ -108,35 +109,43 @@ document.addEventListener("DOMContentLoaded", function() {
                 if ((arrowPosition + 20) > aboutOffset) {
                     myDesktopMenuArrow.removeAttribute("class");
                     myDesktopMenuArrow.classList.add("arrow-about-section");
+                    desktopMenuBoldedLinks(1, 0);
                 }
                 if ((arrowPosition + 20) > codingOffset) {
                     myDesktopMenuArrow.removeAttribute("class");
                     myDesktopMenuArrow.classList.add("arrow-coding-section");
+                    desktopMenuBoldedLinks(2, 1);
                  }
                 if ((arrowPosition + 20) > futureOffset) {
                     myDesktopMenuArrow.removeAttribute("class");
                     myDesktopMenuArrow.classList.add("arrow-future-section");
+                    desktopMenuBoldedLinks(3, 2);
                 }
                 if ((arrowPosition + 20) > contactOffset) {
                     myDesktopMenuArrow.removeAttribute("class");
                     myDesktopMenuArrow.classList.add("arrow-contact-section");
+                    desktopMenuBoldedLinks(4, 3);
                 }
             } else {
                 if (arrowPosition < aboutOffset) {
                     myDesktopMenuArrow.removeAttribute("class");
                     myDesktopMenuArrow.classList.add("arrow-hello-section");
+                    desktopMenuBoldedLinks(0, 1);
                 } else
                 if (arrowPosition < codingOffset) {
                     myDesktopMenuArrow.removeAttribute("class");
                     myDesktopMenuArrow.classList.add("arrow-about-section");
+                    desktopMenuBoldedLinks(1, 2);
                  } else
                 if (arrowPosition < futureOffset) {
                     myDesktopMenuArrow.removeAttribute("class");
                     myDesktopMenuArrow.classList.add("arrow-coding-section");
+                    desktopMenuBoldedLinks(2, 3);
                 } else
                 if (arrowPosition < contactOffset) {
                     myDesktopMenuArrow.removeAttribute("class");
                     myDesktopMenuArrow.classList.add("arrow-future-section");
+                    desktopMenuBoldedLinks(3, 4);
                 }
             }
         }
@@ -164,6 +173,13 @@ document.addEventListener("DOMContentLoaded", function() {
         for (var i = 0; i < myCodingSectionProgressRadialInsideText.length; i++) {
             myCodingSectionProgressRadialInsideText[i].style.transform = "rotate(" + (codingOffset)/5 + "deg)";
         }
+    }
+
+    // boldedLinks function:
+
+    function desktopMenuBoldedLinks(add, remove) {
+        myDesktopMenuLinks[remove].classList.remove("bolded");
+        myDesktopMenuLinks[add].classList.add("bolded");     
     }
 
     // tadaProjectsAnimation function:

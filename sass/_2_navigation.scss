@@ -34,6 +34,11 @@
 
                 &:hover {
                     color: $mainColor;
+                    font-weight: 500;
+                }
+
+                &.bolded {
+                    font-weight: 500;
                 }
 
                 @media (max-width: 1200px) {
