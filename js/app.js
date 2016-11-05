@@ -54,6 +54,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+//-----IF MOBILE DEVICE, REMOVE "background-attachment: fixed;" PROPERTY FROM SECTIONS:
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        myHelloSection.classList.add(".fixed-background");
+        myCodingSection.classList.add(".fixed-background");
+        myContactSection.classList.add(".fixed-background");
+    }
+
+
+
 //-----FUNCTION DEFINITIONS:
 
     // textShowUp function:

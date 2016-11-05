@@ -28,6 +28,12 @@ body {
     padding: 20px;
 }
 
+.fixed-background {
+    background-attachment: scroll;
+    background-size: contain;
+    background-repeat: repeat;
+}
+
 /*FOOTER*/
 
 footer {
