@@ -200,27 +200,19 @@ document.addEventListener("DOMContentLoaded", function() {
         myMobileMenu.classList.toggle("clicked-button-list");
 
         if (myMobileMenu.classList.contains("clicked-button-list")) {
-            var j = 0;
-
-            // internal mobileMenuLinksAnimation function:
-            
-            function mobileMenuLinksAnimation() {
-
-                setTimeout(function() {
-                    myMobileMenuLinks[j].parentElement.style.visibility = "visible";
-                    myMobileMenuLinks[j].parentElement.classList.remove("bounceOutLeft");  
-                    myMobileMenuLinks[j].parentElement.classList.add("bounceInLeft");  
-                    j++;
-                    if (j < myMobileMenuLinks.length) {
-                        mobileMenuLinksAnimation();
-                    }
-                }, 50)
+            for (var i = 0; i < myMobileMenuLinks.length; i++) {
+                (function(j){
+                    setTimeout(function(){
+                        myMobileMenuLinks[j].parentElement.style.visibility = "visible";
+                        myMobileMenuLinks[j].parentElement.classList.remove("bounceOutLeft");  
+                        myMobileMenuLinks[j].parentElement.classList.add("bounceInLeft"); 
+                    }, j*50);              
+                })(i);
             }
-            mobileMenuLinksAnimation();
         } else {
-            for (var j = 0; j < myMobileMenuLinks.length; j++) {
-                myMobileMenuLinks[j].parentElement.classList.remove("bounceInLeft"); 
-                myMobileMenuLinks[j].parentElement.classList.add("bounceOutLeft");                         
+            for (var i = 0; i < myMobileMenuLinks.length; i++) {
+                myMobileMenuLinks[i].parentElement.classList.remove("bounceInLeft"); 
+                myMobileMenuLinks[i].parentElement.classList.add("bounceOutLeft");                         
             }
         }     
     }
@@ -233,9 +225,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         myMobileMenu.classList.toggle("clicked-button-list");
 
-        for (var j = 0; j < myMobileMenuLinks.length; j++) {
-            myMobileMenuLinks[j].parentElement.classList.remove("bounceInLeft"); 
-            myMobileMenuLinks[j].parentElement.classList.add("bounceOutLeft");                         
+        for (var i = 0; i < myMobileMenuLinks.length; i++) {
+            myMobileMenuLinks[i].parentElement.classList.remove("bounceInLeft"); 
+            myMobileMenuLinks[i].parentElement.classList.add("bounceOutLeft");                         
         }
     }
 
